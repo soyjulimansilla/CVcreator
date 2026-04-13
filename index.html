@@ -36,7 +36,7 @@
             letter-spacing: 1px;
             transition: color 0.3s;
         }
-        nav a:hover { color: var(--logo-green); }
+        nav a:hover { color: var(--success-green); }
 
         header { text-align: center; padding: 60px 20px 40px; background: #fff; }
         .logo-container { max-width: 300px; margin: 0 auto; }
@@ -61,6 +61,7 @@
             text-align: center;
         }
         .stat-box h2 { font-size: 3em; color: var(--success-green); margin: 0; }
+        .stat-box p { font-size: 1em; opacity: 0.8; margin-top: 10px; }
 
         /* Servicios */
         .services-grid { 
@@ -77,6 +78,8 @@
         }
         .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
         .price { font-size: 2.2em; font-weight: 800; margin: 20px 0; }
+        .card ul { padding: 0; list-style: none; margin-bottom: 20px; }
+        .card ul li { padding: 5px 0; font-size: 0.9em; border-bottom: 1px solid #f8fafc; }
 
         /* Galería de Ejemplos */
         .examples-grid {
@@ -106,13 +109,14 @@
         }
         @media (max-width: 768px) { .cta-section { grid-template-columns: 1fr; } }
 
-        input, select, textarea { width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 8px; }
+        input, select, textarea { width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; }
         .btn-submit { 
             background: var(--premium-black); color: white; padding: 20px; border: none; border-radius: 8px; 
-            font-weight: 700; width: 100%; cursor: pointer;
+            font-weight: 700; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
         }
+        .btn-submit:hover { background: var(--accent-blue); }
 
-        footer { text-align: center; padding: 60px; color: #64748b; }
+        footer { text-align: center; padding: 60px; color: #64748b; font-size: 0.8em; }
     </style>
 </head>
 <body>
@@ -127,38 +131,50 @@
 
     <header id="inicio">
         <div class="logo-container">
-            <img src="https://github.com/soyjulimansilla/CVcreator/blob/main/Gemini_Generated_Image_f9xezzf9xezzf9xe%20(1).png?raw=true" alt="ReadyATS Logo">
+            <img src="https://github.com/ReadyATS/CVcreator/blob/main/Gemini_Generated_Image_f9xezzf9xezzf9xe%20(1).png?raw=true" alt="ReadyATS Logo">
         </div>
     </header>
 
     <div class="container">
         
         <section id="stats">
-            <div class="section-title"><h2>¿Por qué optimizar?</h2></div>
+            <div class="section-title"><h2>Impacto Real</h2></div>
             <div class="stats-impact">
-                <div class="stat-box"><h2>75%</h2><p>Rechazo automático por ATS</p></div>
-                <div class="stat-box"><h2>6 Seg</h2><p>Tiempo de lectura inicial</p></div>
-                <div class="stat-box"><h2>+140%</h2><p>Más entrevistas logradas</p></div>
+                <div class="stat-box"><h2>75%</h2><p>De CVs son descartados por filtros ATS</p></div>
+                <div class="stat-box"><h2>6 Seg</h2><p>Tiempo de atención de un reclutador</p></div>
+                <div class="stat-box"><h2>+140%</h2><p>Aumento en llamados a entrevista</p></div>
             </div>
         </section>
 
         <section id="servicios">
-            <div class="section-title"><h2>Nuestros Servicios</h2></div>
+            <div class="section-title"><h2>Propuesta de Valor</h2></div>
             <div class="services-grid">
                 <div class="card" style="border-top: 4px solid var(--success-green);">
                     <h3>Análisis Inicial</h3>
                     <div class="price">$0</div>
-                    <p>Diagnóstico de puntos críticos sin costo.</p>
+                    <ul>
+                        <li>Checklist de compatibilidad</li>
+                        <li>Detección de errores críticos</li>
+                        <li>Feedback vía WhatsApp</li>
+                    </ul>
                 </div>
                 <div class="card">
                     <h3>Rediseño Pro</h3>
                     <div class="price">$3.500</div>
-                    <p>Formato 100% anti-filtros y redacción estratégica.</p>
+                    <ul>
+                        <li>Formato 100% Anti-ATS</li>
+                        <li>Redacción por objetivos</li>
+                        <li>PDF + Word Editable</li>
+                    </ul>
                 </div>
                 <div class="card" style="background: var(--premium-black); color: white;">
                     <h3 style="color:white">Master Pack Full</h3>
                     <div class="price" style="color:white">$6.500</div>
-                    <p>CV + LinkedIn + Guía de Entrevistas.</p>
+                    <ul style="border-color: #334155;">
+                        <li>CV Pro + LinkedIn SEO</li>
+                        <li>Carta de Presentación</li>
+                        <li>Guía para Entrevistas</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -167,16 +183,16 @@
             <div class="section-title"><h2>Casos de Éxito</h2></div>
             <div class="examples-grid">
                 <div class="example-item">
-                    <img src="https://github.com/soyjulimansilla/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
-                    <div class="example-desc">Perfil Marketing / Administrativo</div>
+                    <img src="https://github.com/ReadyATS/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
+                    <div class="example-desc">Optimización Perfil Senior</div>
                 </div>
                 <div class="example-item">
-                    <img src="https://github.com/soyjulimansilla/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
-                    <div class="example-desc">Perfil Técnico / Operativo</div>
+                    <img src="https://github.com/ReadyATS/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
+                    <div class="example-desc">Estructura Anti-Filtros IT</div>
                 </div>
                 <div class="example-item">
-                    <img src="https://github.com/soyjulimansilla/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
-                    <div class="example-desc">Optimización Senior</div>
+                    <img src="https://github.com/ReadyATS/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
+                    <div class="example-desc">Rediseño Administrativo</div>
                 </div>
             </div>
         </section>
@@ -184,8 +200,8 @@
         <section id="contacto">
             <div class="cta-section">
                 <div>
-                    <h2>Consultoría Elite</h2>
-                    <p>Danos las herramientas para que tu perfil sea el que destaque en la pila de candidatos.</p>
+                    <h2 style="font-size: 2.5em; margin-bottom: 20px;">Tu carrera merece ser vista.</h2>
+                    <p>No permitas que un algoritmo decida tu futuro. Asegurá tu lugar en la entrevista con un perfil optimizado.</p>
                 </div>
                 <div>
                     <form action="https://formspree.io/f/mgorwqbv" method="POST">
@@ -195,8 +211,8 @@
                             <option value="rediseño-pro">Rediseño Pro ($3.500)</option>
                             <option value="master-pack">Master Pack Full ($6.500)</option>
                         </select>
-                        <textarea name="mensaje" rows="4" placeholder="¿Cuál es tu objetivo profesional?"></textarea>
-                        <button type="submit" class="btn-submit">ENVIAR SOLICITUD</button>
+                        <textarea name="mensaje" rows="4" placeholder="¿En qué rubro buscás destacar?"></textarea>
+                        <button type="submit" class="btn-submit">Iniciar Consultoría</button>
                     </form>
                 </div>
             </div>
@@ -204,7 +220,7 @@
     </div>
 
     <footer>
-        <p>ReadyATS | Tigre, Buenos Aires &copy; 2026</p>
+        <p>ReadyATS | Consultoría Estratégica &copy; 2026</p>
     </footer>
 
 </body>
