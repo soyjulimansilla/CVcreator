@@ -3,203 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadyATS | Consultoría de Carrera Profesional</title>
+    <title>ReadyATS | Consultoría Profesional</title>
     <style>
-        :root { 
-            --primary: #1a2a3a; 
-            --accent: #2980b9; 
-            --success: #27ae60; 
-            --text: #34495e;
-            --light: #f8f9fa;
-        }
-        
-        body { 
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            line-height: 1.6; 
-            color: var(--text); 
-            max-width: 1100px; 
-            margin: auto; 
-            padding: 0; 
-            background-color: #ffffff; 
-        }
-
-        /* Header Estilo Agencia */
-        header { 
-            text-align: center; 
-            padding: 80px 20px; 
-            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%); 
-            color: white;
-        }
-        header h1 { font-size: 3em; margin: 0; letter-spacing: -1px; }
-        header p { font-size: 1.2em; opacity: 0.9; max-width: 600px; margin: 20px auto; }
-
+        :root { --primary: #1a2a3a; --accent: #2980b9; --success: #27ae60; --text: #34495e; --light: #f8f9fa; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text); max-width: 1100px; margin: auto; padding: 0; background-color: #fff; }
+        header { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%); color: white; }
         .container { padding: 40px 20px; }
-
-        /* Stats con estilo limpio */
-        .stats { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-            gap: 20px; 
-            margin-top: -50px; 
-            padding: 0 20px;
-        }
-        .stat-card { 
-            background: white; 
-            padding: 30px; 
-            border-radius: 12px; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
-            text-align: center;
-        }
+        .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: -50px; padding: 0 20px; }
+        .stat-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; }
         .stat-card div:first-child { font-size: 2.5em; font-weight: 800; color: var(--accent); }
-
-        /* Servicios */
-        .section-title { text-align: center; margin: 60px 0 40px; }
-        .services { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
-        }
-        .card { 
-            background: var(--light); 
-            padding: 40px; 
-            border-radius: 15px; 
-            transition: 0.3s; 
-            border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-        }
-        .card:hover { border-color: var(--accent); background: white; box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
-        .card h3 { margin-top: 0; color: var(--primary); font-size: 1.5em; }
-        .price { font-size: 2em; font-weight: bold; color: var(--primary); margin: 20px 0; }
-        
-        /* Listas de servicios */
-        ul { padding: 0; list-style: none; margin: 20px 0; flex-grow: 1; }
-        ul li { margin-bottom: 10px; padding-left: 25px; position: relative; }
-        ul li::before { content: "✓"; position: absolute; left: 0; color: var(--success); font-weight: bold; }
-
-        /* Formulario Profesional */
-        .cta-section { 
-            background: var(--primary); 
-            color: white; 
-            padding: 60px; 
-            border-radius: 20px; 
-            margin: 60px 0;
-        }
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin: 50px 0; }
+        .card { background: var(--light); padding: 30px; border-radius: 15px; border: 1px solid #eee; }
+        .price { font-size: 2em; font-weight: bold; color: var(--primary); margin: 10px 0; }
+        .cta-section { background: var(--primary); color: white; padding: 50px; border-radius: 20px; margin: 40px 0; }
         .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
         @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
-
-        input, select, textarea { 
-            width: 100%; 
-            padding: 15px; 
-            margin-bottom: 20px; 
-            border-radius: 8px; 
-            border: none; 
-            font-size: 1em;
-        }
-        .btn-main { 
-            background: var(--success); 
-            color: white; 
-            padding: 20px; 
-            border: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            width: 100%; 
-            cursor: pointer; 
-            font-size: 1.1em;
-            text-transform: uppercase;
-        }
-
-        /* Botón WhatsApp */
-        .wpp-float { 
-            position: fixed; 
-            bottom: 40px; 
-            right: 40px; 
-            background: #25d366; 
-            color: white; 
-            padding: 15px 25px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2); 
-            display: flex; 
-            align-items: center; 
-            gap: 10px;
-            z-index: 1000;
-        }
-
-        footer { text-align: center; padding: 60px; color: #999; border-top: 1px solid #eee; }
+        input, select, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 6px; border: none; font-size: 1em; }
+        label { display: block; margin-bottom: 5px; font-size: 0.9em; opacity: 0.9; }
+        .btn-main { background: var(--success); color: white; padding: 18px; border: none; border-radius: 8px; font-weight: bold; width: 100%; cursor: pointer; font-size: 1.1em; transition: 0.3s; }
+        .btn-main:hover { background: #219150; transform: scale(1.01); }
+        footer { text-align: center; padding: 40px; color: #999; font-size: 0.8em; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>ReadyATS</h1>
-        <p>Expertos en optimización de perfiles profesionales para el mercado laboral moderno.</p>
+        <p>Optimizamos tu perfil profesional para el mercado laboral moderno.</p>
     </header>
 
     <div class="container">
         <section class="stats">
-            <div class="stat-card"><div>92%</div><div>Tasa de Éxito</div></div>
-            <div class="stat-card"><div>+200</div><div>Perfiles Optimizados</div></div>
-            <div class="stat-card"><div>24hs</div><div>Entrega Express</div></div>
+            <div class="stat-card"><div>92%</div><div>Éxito</div></div>
+            <div class="stat-card"><div>+200</div><div>Perfiles Listos</div></div>
+            <div class="stat-card"><div>24hs</div><div>Entrega</div></div>
         </section>
-
-        <div class="section-title">
-            <h2>Nuestros Servicios Especializados</h2>
-            <p>Soluciones diseñadas para superar los filtros de reclutamiento automáticos.</p>
-        </div>
 
         <section class="services">
             <div class="card">
-                <h3>Auditoría de CV</h3>
-                <p>Análisis técnico profundo para detectar por qué tu CV está siendo rechazado.</p>
+                <h3>Auditoría CV</h3>
                 <div class="price">$1.500</div>
-                <ul>
-                    <li>Reporte de legibilidad ATS</li>
-                    <li>Detección de errores de formato</li>
-                    <li>Sugerencias de palabras clave</li>
-                </ul>
+                <p>Análisis técnico y reporte de errores ATS.</p>
             </div>
             <div class="card" style="border: 2px solid var(--accent);">
-                <h3>Pack Profesional Full</h3>
-                <p>Reestructuración completa de tu CV con enfoque en resultados.</p>
+                <h3>Pack Pro Full</h3>
                 <div class="price">$4.500</div>
-                <ul>
-                    <li>Redacción profesional de logros</li>
-                    <li>Diseño apto para lectura de robots</li>
-                    <li>Optimización para buscadores de RR.HH.</li>
-                </ul>
+                <p>Reestructuración total + diseño profesional.</p>
             </div>
             <div class="card">
-                <h3>LinkedIn estelar</h3>
-                <p>Transformamos tu perfil en una herramienta de atracción de talento.</p>
+                <h3>LinkedIn PRO</h3>
                 <div class="price">$3.800</div>
-                <ul>
-                    <li>Optimización de titular y extracto</li>
-                    <li>Estrategia de palabras clave</li>
-                    <li>Guía de configuración de privacidad</li>
-                </ul>
+                <p>Optimización de titular, extracto y SEO.</p>
             </div>
         </section>
 
         <section class="cta-section">
             <div class="form-grid">
                 <div>
-                    <h2>Iniciá tu transformación</h2>
-                    <p>Completá el formulario con tu información base. Una vez enviado, <strong>hacé clic en el botón de WhatsApp</strong> para coordinar el pago y los detalles del servicio.</p>
-                    <p style="font-size: 0.9em; opacity: 0.7;">✓ Tu información es tratada bajo estricta confidencialidad.</p>
+                    <h2>Paso 1: Tu información</h2>
+                    <p>Cargá tus datos o pegá el link a tu CV actual (Google Drive/Dropbox). Al finalizar, se abrirá nuestro WhatsApp para confirmar el pago.</p>
+                    <div style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 8px; font-size: 0.9em;">
+                        <strong>Tip:</strong> Si no tenés el link, podés enviarme el archivo directamente por WhatsApp en el siguiente paso.
+                    </div>
                 </div>
                 <div>
-                    <form action="https://formspree.io/f/mgorwqbv" method="POST">
-                        <input type="text" name="name" placeholder="Nombre completo" required>
-                        <input type="email" name="email" placeholder="Correo electrónico" required>
-                        <select name="servicio">
-                            <option value="auditoria">Auditoría de CV ($1.500)</option>
-                            <option value="pack-pro">Pack Profesional Full ($4.500)</option>
-                            <option value="linkedin">LinkedIn Estelar ($3.800)</option>
+                    <form action="https://formspree.io/f/mgorwqbv" method="POST" id="miFormulario">
+                        <label>Nombre Completo</label>
+                        <input type="text" name="name" id="userName" placeholder="Ej: Julieta Mansilla" required>
+                        
+                        <label>Servicio de Interés</label>
+                        <select name="servicio" id="userService">
+                            <option value="Auditoría">Auditoría de CV ($1.500)</option>
+                            <option value="Pack Pro">Pack Profesional Full ($4.500)</option>
+                            <option value="LinkedIn">LinkedIn Estelar ($3.800)</option>
                         </select>
-                        <textarea name="mensaje" rows="4" placeholder="Contanos brevemente tu objetivo profesional..."></textarea>
-                        <button type="submit" class="btn-submit" style="background: #3498db; color: white; padding: 15px; border: none; border-radius: 8px; width: 100%; font-weight: bold; cursor: pointer;">ENVIAR INFORMACIÓN</button>
+                        
+                        <label>Link a tu CV actual (opcional)</label>
+                        <input type="url" name="cv_link" placeholder="https://drive.google.com/...">
+
+                        <label>Información adicional o texto del CV</label>
+                        <textarea name="mensaje" rows="4" placeholder="Podés pegar acá el texto de tu CV o contarnos tus dudas..."></textarea>
+                        
+                        <button type="submit" class="btn-main">ENVIAR Y COORDINAR PAGO</button>
                     </form>
                 </div>
             </div>
@@ -207,13 +92,23 @@
     </div>
 
     <footer>
-        <p>ReadyATS &copy; 2026 | El Talar, Tigre, Buenos Aires</p>
-        <p>Privacidad Garantizada para Candidatos y Empresas</p>
+        <p>ReadyATS &copy; 2026 | El Talar, Tigre</p>
     </footer>
 
-    <a href="https://wa.me/5491127880469?text=Hola!%20Vengo%20de%20la%20web%20ReadyATS%20y%20quiero%20contratar%20un%20servicio." class="wpp-float" target="_blank">
-        <span>Hablar por WhatsApp para pagar</span>
-    </a>
+    <script>
+        const formulario = document.getElementById('miFormulario');
+        formulario.addEventListener('submit', function() {
+            const nombre = document.getElementById('userName').value;
+            const servicio = document.getElementById('userService').value;
+            
+            const mensajeWpp = `Hola! Soy ${nombre}. Acabo de enviar el formulario para el servicio: ${servicio}. Te adjunto mi CV por acá para empezar.`;
+            const urlWpp = `https://wa.me/5491127880469?text=${encodeURIComponent(mensajeWpp)}`;
+            
+            setTimeout(function() {
+                window.location.href = urlWpp;
+            }, 1000);
+        });
+    </script>
 
 </body>
 </html>
