@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generador de CV Anónimo</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.5; color: #333; max-width: 800px; margin: auto; padding: 20px; }
+        h1 { font-size: 24px; text-transform: uppercase; border-bottom: 2px solid #000; margin-bottom: 5px; }
+        h2 { font-size: 18px; text-transform: uppercase; margin-top: 20px; background: #eee; padding: 5px; }
+        .info-contacto { margin-bottom: 20px; font-style: italic; }
+        .experiencia-item { margin-bottom: 15px; }
+        .puesto { font-weight: bold; }
+        
+        /* Esto hace que al imprimir NO salgan cosas que no queremos */
+        @media print {
+            .no-imprimir { display: none; }
+            body { padding: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="no-imprimir">
+        <p><strong>Modo Edición:</strong> Escribe directamente sobre el texto para probar.</p>
+        <button onclick="window.print()">Descargar PDF (Gratis)</button>
+        <hr>
+    </div>
+
+    <header>
+        <h1 contenteditable="true">TÍTULO PROFESIONAL / ALIAS</h1>
+        <div class="info-contacto">
+            <span>Ubicación: Buenos Aires, Argentina</span> | 
+            <span>Contacto: [Vía Plataforma Anónima]</span>
+        </div>
+    </header>
+
+    <section>
+        <h2>Resumen Profesional</h2>
+        <p contenteditable="true">Escribe aquí una breve descripción de tus habilidades principales y años de experiencia. Enfócate en palabras clave de tu industria.</p>
+    </section>
+
+    <section>
+        <h2>Experiencia Laboral</h2>
+        <div class="experiencia-item">
+            <div class="puesto" contenteditable="true">Nombre del Puesto | Empresa | Fecha Inicio - Fin</div>
+            <ul contenteditable="true">
+                <li>Logro principal usando [Herramienta/Habilidad].</li>
+                <li>Responsabilidad clave que demuestre resultados cuantificables.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Habilidades Técnicas</h2>
+        <p contenteditable="true">Herramienta 1, Herramienta 2, Software específico, Idiomas.</p>
+    </section>
+
+</body>
+</html>
