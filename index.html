@@ -3,162 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReadyATS | Consultoría de Carrera Profesional</title>
+    <title>ReadyATS | Elite Career Consulting</title>
     <style>
         :root { 
-            --deep-blue: #1A2A3A; 
-            --logo-blue: #2980b9; 
-            --logo-green: #27ae60; 
-            --text-dark: #34495e;
-            --bg-light: #f8f9fa;
+            --premium-black: #0f172a; 
+            --accent-blue: #334155; 
+            --success-green: #10b981; 
+            --bg-light: #fdfdfd;
         }
         
-        body { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: var(--text-dark); max-width: 1100px; margin: auto; padding: 0; background-color: #ffffff; }
+        * { scroll-behavior: smooth; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: var(--premium-black); max-width: 1200px; margin: auto; background-color: #fff; }
 
-        header { 
-            text-align: center; 
-            padding: 60px 20px 40px; 
-            background: linear-gradient(135deg, var(--deep-blue) 0%, #2c3e50 100%); 
-            color: white;
-        }
-
-        /* Contenedor del Logo con fondo blanco para que combine con tu imagen */
-        .logo-container { 
-            max-width: 400px; 
-            margin: 0 auto 20px; 
-            background: white; 
-            padding: 15px; 
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        .logo-container img { width: 100%; height: auto; display: block; }
-
-        header p { font-size: 1.2em; opacity: 0.9; max-width: 600px; margin: 15px auto 0; font-weight: 300; }
-
-        .container { padding: 40px 20px; }
-
-        .free-banner {
-            background: var(--logo-green);
-            color: white;
+        /* Navegación Superior */
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+            z-index: 1000;
             text-align: center;
-            padding: 15px;
-            font-weight: bold;
-            border-radius: 8px;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
-            font-size: 1.1em;
         }
-
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { 
-            background: var(--bg-light); 
-            padding: 40px; 
-            border-radius: 15px; 
-            transition: 0.3s; 
-            border: 1px solid #eee;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-        }
-        .card:hover { border-color: var(--logo-blue); background: white; transform: translateY(-5px); }
-        .card h3 { margin-top: 0; color: var(--deep-blue); font-size: 1.5em; }
-        .price { font-size: 2em; font-weight: bold; color: var(--deep-blue); margin: 15px 0; }
-        .price span { font-size: 0.5em; color: var(--logo-green); text-transform: uppercase; vertical-align: middle; margin-left: 10px; }
-        
-        ul { padding: 0; list-style: none; margin: 20px 0; flex-grow: 1; }
-        ul li { margin-bottom: 10px; padding-left: 25px; position: relative; font-size: 0.95em; }
-        ul li::before { content: "✓"; position: absolute; left: 0; color: var(--logo-green); font-weight: bold; }
-
-        .cta-section { background: var(--deep-blue); color: white; padding: 60px; border-radius: 20px; margin: 60px 0; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
-
-        input, select, textarea { width: 100%; padding: 15px; margin-bottom: 20px; border-radius: 8px; border: none; font-size: 1em; }
-        
-        .btn-submit { 
-            background: var(--logo-green); 
-            color: white; 
-            padding: 20px; 
-            border: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            width: 100%; 
-            cursor: pointer; 
-            font-size: 1.1em;
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--premium-black);
+            font-weight: 600;
+            font-size: 0.9em;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
         }
-        .btn-submit:hover { background: #219150; }
+        nav a:hover { color: var(--logo-green); }
 
-        footer { text-align: center; padding: 60px; color: #999; border-top: 1px solid #eee; font-size: 0.9em; }
+        header { text-align: center; padding: 60px 20px 40px; background: #fff; }
+        .logo-container { max-width: 300px; margin: 0 auto; }
+        .logo-container img { width: 100%; height: auto; }
+
+        .container { padding: 20px; }
+
+        /* Secciones */
+        section { padding: 80px 0 40px; border-bottom: 1px solid #f1f5f9; }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h2 { font-size: 2.2em; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Estadísticas */
+        .stats-impact {
+            background: var(--premium-black);
+            color: white;
+            border-radius: 24px;
+            padding: 60px 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+        .stat-box h2 { font-size: 3em; color: var(--success-green); margin: 0; }
+
+        /* Servicios */
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+        }
+        .card { 
+            padding: 40px; 
+            border-radius: 12px; 
+            border: 1px solid #e2e8f0;
+            background: #fff;
+            transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .price { font-size: 2.2em; font-weight: 800; margin: 20px 0; }
+
+        /* Galería de Ejemplos */
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .example-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+        .example-item img { width: 100%; height: auto; display: block; opacity: 0.9; transition: 0.3s; }
+        .example-item:hover img { opacity: 1; transform: scale(1.02); }
+        .example-desc { padding: 15px; text-align: center; font-size: 0.9em; font-weight: 600; }
+
+        /* Formulario */
+        .cta-section { 
+            background: #f8fafc; 
+            padding: 60px; 
+            border-radius: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        @media (max-width: 768px) { .cta-section { grid-template-columns: 1fr; } }
+
+        input, select, textarea { width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 8px; }
+        .btn-submit { 
+            background: var(--premium-black); color: white; padding: 20px; border: none; border-radius: 8px; 
+            font-weight: 700; width: 100%; cursor: pointer;
+        }
+
+        footer { text-align: center; padding: 60px; color: #64748b; }
     </style>
 </head>
 <body>
 
-    <header>
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#stats">Impacto</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#ejemplos">Ejemplos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <header id="inicio">
         <div class="logo-container">
             <img src="https://github.com/soyjulimansilla/CVcreator/blob/main/Gemini_Generated_Image_f9xezzf9xezzf9xe%20(1).png?raw=true" alt="ReadyATS Logo">
         </div>
-        <p>Optimizamos tu perfil profesional para que los filtros de RR.HH. dejen de rechazarte.</p>
     </header>
 
     <div class="container">
-        <div class="free-banner">
-            ✨ PROMOCIÓN LANZAMIENTO: Tu primera consulta o auditoría rápida es 100% GRATIS.
-        </div>
-
-        <section class="services">
-            <div class="card" style="border: 2px solid var(--logo-green);">
-                <h3>Consulta Inicial</h3>
-                <p>Análisis rápido de tu CV actual y consejos clave para mejorar hoy mismo.</p>
-                <div class="price">$0 <span>¡Gratis!</span></div>
-                <ul>
-                    <li>Revisión de formato ATS</li>
-                    <li>Preguntas sobre tu CV</li>
-                    <li>Consejos de palabras clave</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Pack Profesional</h3>
-                <p>Reestructuración total de tu CV con enfoque en resultados y diseño moderno.</p>
-                <div class="price">$4.500</div>
-                <ul>
-                    <li>Redacción profesional de logros</li>
-                    <li>Diseño apto para lectura de robots</li>
-                    <li>Versiones en PDF y Word editable</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>LinkedIn Estelar</h3>
-                <p>Tu perfil de LinkedIn optimizado para que los reclutadores te encuentren.</p>
-                <div class="price">$3.800</div>
-                <ul>
-                    <li>Optimización de titular y extracto</li>
-                    <li>Mejora de visibilidad SEO</li>
-                    <li>Configuración de perfil profesional</li>
-                </ul>
+        
+        <section id="stats">
+            <div class="section-title"><h2>¿Por qué optimizar?</h2></div>
+            <div class="stats-impact">
+                <div class="stat-box"><h2>75%</h2><p>Rechazo automático por ATS</p></div>
+                <div class="stat-box"><h2>6 Seg</h2><p>Tiempo de lectura inicial</p></div>
+                <div class="stat-box"><h2>+140%</h2><p>Más entrevistas logradas</p></div>
             </div>
         </section>
 
-        <section class="cta-section">
-            <div class="form-grid">
+        <section id="servicios">
+            <div class="section-title"><h2>Nuestros Servicios</h2></div>
+            <div class="services-grid">
+                <div class="card" style="border-top: 4px solid var(--success-green);">
+                    <h3>Análisis Inicial</h3>
+                    <div class="price">$0</div>
+                    <p>Diagnóstico de puntos críticos sin costo.</p>
+                </div>
+                <div class="card">
+                    <h3>Rediseño Pro</h3>
+                    <div class="price">$3.500</div>
+                    <p>Formato 100% anti-filtros y redacción estratégica.</p>
+                </div>
+                <div class="card" style="background: var(--premium-black); color: white;">
+                    <h3 style="color:white">Master Pack Full</h3>
+                    <div class="price" style="color:white">$6.500</div>
+                    <p>CV + LinkedIn + Guía de Entrevistas.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="ejemplos">
+            <div class="section-title"><h2>Casos de Éxito</h2></div>
+            <div class="examples-grid">
+                <div class="example-item">
+                    <img src="https://github.com/soyjulimansilla/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
+                    <div class="example-desc">Perfil Marketing / Administrativo</div>
+                </div>
+                <div class="example-item">
+                    <img src="https://github.com/soyjulimansilla/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
+                    <div class="example-desc">Perfil Técnico / Operativo</div>
+                </div>
+                <div class="example-item">
+                    <img src="https://github.com/soyjulimansilla/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
+                    <div class="example-desc">Optimización Senior</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto">
+            <div class="cta-section">
                 <div>
-                    <h2>¿Dudas con tu CV?</h2>
-                    <p>Aprovechá la <strong>consulta gratuita</strong>. Envianos tu información o tus dudas y te responderemos con consejos reales para mejorar tu perfil.</p>
-                    <p style="font-size: 0.8em; opacity: 0.7; margin-top: 20px;">✓ Servicio 100% confidencial y anónimo.</p>
+                    <h2>Consultoría Elite</h2>
+                    <p>Danos las herramientas para que tu perfil sea el que destaque en la pila de candidatos.</p>
                 </div>
                 <div>
                     <form action="https://formspree.io/f/mgorwqbv" method="POST">
-                        <input type="text" name="name" placeholder="Tu Nombre o Alias" required>
-                        <input type="email" name="email" placeholder="Tu Email de contacto" required>
+                        <input type="text" name="name" placeholder="Nombre completo" required>
                         <select name="servicio">
-                            <option value="consulta-gratis">Consulta Gratis (Preguntas/Consejos)</option>
-                            <option value="pack-pro">Pack Profesional Full ($4.500)</option>
-                            <option value="linkedin">LinkedIn Estelar ($3.800)</option>
+                            <option value="consulta-gratis">Análisis Inicial Gratis</option>
+                            <option value="rediseño-pro">Rediseño Pro ($3.500)</option>
+                            <option value="master-pack">Master Pack Full ($6.500)</option>
                         </select>
-                        <textarea name="mensaje" rows="4" placeholder="Escribí acá tus preguntas o pegá el texto de tu CV..." required></textarea>
-                        <button type="submit" class="btn-submit">ENVIAR CONSULTA</button>
+                        <textarea name="mensaje" rows="4" placeholder="¿Cuál es tu objetivo profesional?"></textarea>
+                        <button type="submit" class="btn-submit">ENVIAR SOLICITUD</button>
                     </form>
                 </div>
             </div>
@@ -166,8 +204,7 @@
     </div>
 
     <footer>
-        <p>ReadyATS &copy; 2026 | Tigre, Buenos Aires</p>
-        <p>Hacia tu próximo gran empleo.</p>
+        <p>ReadyATS | Tigre, Buenos Aires &copy; 2026</p>
     </footer>
 
 </body>
