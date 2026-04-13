@@ -15,7 +15,6 @@
         * { scroll-behavior: smooth; box-sizing: border-box; }
         body { font-family: 'Inter', -apple-system, sans-serif; line-height: 1.6; color: var(--premium-black); max-width: 1200px; margin: auto; background-color: #fff; }
 
-        /* Navegación Superior */
         nav {
             position: sticky;
             top: 0;
@@ -26,95 +25,43 @@
             z-index: 1000;
             text-align: center;
         }
-        nav a {
-            margin: 0 15px;
-            text-decoration: none;
-            color: var(--premium-black);
-            font-weight: 600;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-        nav a:hover { color: var(--success-green); }
+        nav a { margin: 0 15px; text-decoration: none; color: var(--premium-black); font-weight: 600; font-size: 0.85em; text-transform: uppercase; letter-spacing: 1px; }
 
-        header { text-align: center; padding: 60px 20px 40px; background: #fff; }
+        header { text-align: center; padding: 60px 20px 20px; }
         .logo-container { max-width: 300px; margin: 0 auto; }
         .logo-container img { width: 100%; height: auto; }
 
-        .container { padding: 20px; }
+        .brand-statement { max-width: 850px; margin: 40px auto 60px; text-align: center; padding: 0 20px; }
+        .brand-statement p { font-size: 1.1em; color: var(--accent-blue); font-style: italic; line-height: 1.8; font-weight: 300; }
 
-        /* Secciones */
+        .container { padding: 20px; }
         section { padding: 80px 0 40px; border-bottom: 1px solid #f1f5f9; }
         .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title h2 { font-size: 2.2em; text-transform: uppercase; letter-spacing: 2px; }
+        .section-title h2 { font-size: 2em; text-transform: uppercase; letter-spacing: 2px; }
 
-        /* Estadísticas */
-        .stats-impact {
-            background: var(--premium-black);
-            color: white;
-            border-radius: 24px;
-            padding: 60px 40px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            text-align: center;
-        }
+        /* Metodología */
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; text-align: center; }
+        .step-item { padding: 20px; }
+        .step-number { font-size: 2em; font-weight: 900; color: #e2e8f0; margin-bottom: 10px; display: block; }
+
+        /* FAQs */
+        .faq-grid { max-width: 800px; margin: 0 auto; }
+        .faq-item { margin-bottom: 20px; padding: 20px; background: var(--bg-light); border-radius: 12px; }
+        .faq-item h4 { margin: 0 0 10px; color: var(--accent-blue); }
+
+        .stats-impact { background: var(--premium-black); color: white; border-radius: 24px; padding: 60px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
         .stat-box h2 { font-size: 3em; color: var(--success-green); margin: 0; }
-        .stat-box p { font-size: 1em; opacity: 0.8; margin-top: 10px; }
 
-        /* Servicios */
-        .services-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 30px; 
-        }
-        .card { 
-            padding: 40px; 
-            border-radius: 12px; 
-            border: 1px solid #e2e8f0;
-            background: #fff;
-            transition: 0.3s;
-        }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { padding: 40px; border-radius: 12px; border: 1px solid #e2e8f0; transition: 0.3s; background: #fff; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
         .price { font-size: 2.2em; font-weight: 800; margin: 20px 0; }
-        .card ul { padding: 0; list-style: none; margin-bottom: 20px; }
-        .card ul li { padding: 5px 0; font-size: 0.9em; border-bottom: 1px solid #f8fafc; }
 
-        /* Galería de Ejemplos */
-        .examples-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .example-item {
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-            background: #f8fafc;
-        }
-        .example-item img { width: 100%; height: auto; display: block; opacity: 0.9; transition: 0.3s; }
-        .example-item:hover img { opacity: 1; transform: scale(1.02); }
-        .example-desc { padding: 15px; text-align: center; font-size: 0.9em; font-weight: 600; }
-
-        /* Formulario */
-        .cta-section { 
-            background: #f8fafc; 
-            padding: 60px; 
-            border-radius: 24px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
+        .cta-section { background: var(--premium-black); color: white; padding: 60px; border-radius: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
         @media (max-width: 768px) { .cta-section { grid-template-columns: 1fr; } }
 
-        input, select, textarea { width: 100%; padding: 16px; margin-bottom: 16px; border: 1px solid #cbd5e1; border-radius: 8px; font-family: inherit; }
-        .btn-submit { 
-            background: var(--premium-black); color: white; padding: 20px; border: none; border-radius: 8px; 
-            font-weight: 700; width: 100%; cursor: pointer; text-transform: uppercase; letter-spacing: 1px;
-        }
-        .btn-submit:hover { background: var(--accent-blue); }
+        input, select, textarea { width: 100%; padding: 16px; margin-bottom: 16px; border-radius: 8px; border: none; }
+        .btn-submit { background: var(--success-green); color: white; padding: 20px; border: none; border-radius: 8px; font-weight: 700; width: 100%; cursor: pointer; text-transform: uppercase; }
 
         footer { text-align: center; padding: 60px; color: #64748b; font-size: 0.8em; }
     </style>
@@ -123,9 +70,9 @@
 
     <nav>
         <a href="#inicio">Inicio</a>
-        <a href="#stats">Impacto</a>
+        <a href="#metodo">Metodología</a>
         <a href="#servicios">Servicios</a>
-        <a href="#ejemplos">Ejemplos</a>
+        <a href="#faq">Dudas</a>
         <a href="#contacto">Contacto</a>
     </nav>
 
@@ -133,86 +80,57 @@
         <div class="logo-container">
             <img src="https://github.com/ReadyATS/CVcreator/blob/main/Gemini_Generated_Image_f9xezzf9xezzf9xe%20(1).png?raw=true" alt="ReadyATS Logo">
         </div>
+        <div class="brand-statement">
+            <p>El CV es tu herramienta de marketing personal más determinante. En un mercado competitivo, este documento trasciende la experiencia para convertirse en una pieza estratégica capaz de captar la atención en pocos segundos.</p>
+        </div>
     </header>
 
     <div class="container">
         
-        <section id="stats">
-            <div class="section-title"><h2>Impacto Real</h2></div>
-            <div class="stats-impact">
-                <div class="stat-box"><h2>75%</h2><p>De CVs son descartados por filtros ATS</p></div>
-                <div class="stat-box"><h2>6 Seg</h2><p>Tiempo de atención de un reclutador</p></div>
-                <div class="stat-box"><h2>+140%</h2><p>Aumento en llamados a entrevista</p></div>
+        <section id="metodo">
+            <div class="section-title"><h2>Cómo trabajamos</h2></div>
+            <div class="steps-grid">
+                <div class="step-item"><span class="step-number">01</span><h4>Auditoría</h4><p>Analizamos tu perfil actual y detectamos fallas.</p></div>
+                <div class="step-item"><span class="step-number">02</span><h4>Estrategia</h4><p>Redactamos tus logros con palabras clave ATS.</p></div>
+                <div class="step-item"><span class="step-number">03</span><h4>Diseño</h4><p>Maquetamos un CV limpio, moderno y legible.</p></div>
+                <div class="step-item"><span class="step-number">04</span><h4>Éxito</h4><p>Entrega final en 24-48hs lista para postular.</p></div>
             </div>
         </section>
 
         <section id="servicios">
-            <div class="section-title"><h2>Propuesta de Valor</h2></div>
+            <div class="section-title"><h2>Nuestros Servicios</h2></div>
             <div class="services-grid">
-                <div class="card" style="border-top: 4px solid var(--success-green);">
-                    <h3>Análisis Inicial</h3>
-                    <div class="price">$0</div>
-                    <ul>
-                        <li>Checklist de compatibilidad</li>
-                        <li>Detección de errores críticos</li>
-                        <li>Feedback vía WhatsApp</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Rediseño Pro</h3>
-                    <div class="price">$3.500</div>
-                    <ul>
-                        <li>Formato 100% Anti-ATS</li>
-                        <li>Redacción por objetivos</li>
-                        <li>PDF + Word Editable</li>
-                    </ul>
-                </div>
-                <div class="card" style="background: var(--premium-black); color: white;">
-                    <h3 style="color:white">Master Pack Full</h3>
-                    <div class="price" style="color:white">$6.500</div>
-                    <ul style="border-color: #334155;">
-                        <li>CV Pro + LinkedIn SEO</li>
-                        <li>Carta de Presentación</li>
-                        <li>Guía para Entrevistas</li>
-                    </ul>
-                </div>
+                <div class="card"><h3>Análisis Inicial</h3><div class="price">$0</div><p>Diagnóstico de puntos críticos vía WhatsApp.</p></div>
+                <div class="card" style="border: 2px solid var(--premium-black)"><h3>Rediseño Pro</h3><div class="price">$3.500</div><p>CV 100% Anti-ATS con redacción estratégica.</p></div>
+                <div class="card" style="background: var(--premium-black); color: white;"><h3 style="color:white">Master Pack Full</h3><div class="price" style="color:white">$6.500</div><p>CV + LinkedIn + Guía de Entrevistas.</p></div>
             </div>
         </section>
 
-        <section id="ejemplos">
-            <div class="section-title"><h2>Casos de Éxito</h2></div>
-            <div class="examples-grid">
-                <div class="example-item">
-                    <img src="https://github.com/ReadyATS/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
-                    <div class="example-desc">Optimización Perfil Senior</div>
-                </div>
-                <div class="example-item">
-                    <img src="https://github.com/ReadyATS/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
-                    <div class="example-desc">Estructura Anti-Filtros IT</div>
-                </div>
-                <div class="example-item">
-                    <img src="https://github.com/ReadyATS/CVcreator/blob/main/Gemini_Generated_Image_micun2micun2micu.jpg?raw=true" alt="Ejemplo CV">
-                    <div class="example-desc">Rediseño Administrativo</div>
-                </div>
+        <section id="faq">
+            <div class="section-title"><h2>Preguntas Frecuentes</h2></div>
+            <div class="faq-grid">
+                <div class="faq-item"><h4>¿En qué formato recibo mi CV?</h4><p>En PDF (optimizado para sistemas) y Word (para que puedas editarlo a futuro).</p></div>
+                <div class="faq-item"><h4>¿Cuánto demora el proceso?</h4><p>Una vez recibida tu información, la entrega se realiza en un máximo de 48 horas hábiles.</p></div>
+                <div class="faq-item"><h4>¿Es seguro mi pago?</h4><p>Trabajamos con Mercado Pago para tu total tranquilidad y seguridad.</p></div>
             </div>
         </section>
 
         <section id="contacto">
             <div class="cta-section">
                 <div>
-                    <h2 style="font-size: 2.5em; margin-bottom: 20px;">Tu carrera merece ser vista.</h2>
-                    <p>No permitas que un algoritmo decida tu futuro. Asegurá tu lugar en la entrevista con un perfil optimizado.</p>
+                    <h2>Iniciá tu camino al éxito.</h2>
+                    <p>No dejes que un algoritmo decida tu futuro profesional.</p>
                 </div>
                 <div>
                     <form action="https://formspree.io/f/mgorwqbv" method="POST">
-                        <input type="text" name="name" placeholder="Nombre completo" required>
+                        <input type="text" name="name" placeholder="Tu Nombre" required>
                         <select name="servicio">
-                            <option value="consulta-gratis">Análisis Inicial Gratis</option>
-                            <option value="rediseño-pro">Rediseño Pro ($3.500)</option>
-                            <option value="master-pack">Master Pack Full ($6.500)</option>
+                            <option value="gratis">Consulta Gratis</option>
+                            <option value="pro">Rediseño Pro ($3.500)</option>
+                            <option value="master">Master Pack ($6.500)</option>
                         </select>
-                        <textarea name="mensaje" rows="4" placeholder="¿En qué rubro buscás destacar?"></textarea>
-                        <button type="submit" class="btn-submit">Iniciar Consultoría</button>
+                        <textarea name="mensaje" rows="4" placeholder="¿A qué puesto aspirás?"></textarea>
+                        <button type="submit" class="btn-submit">Enviar Solicitud</button>
                     </form>
                 </div>
             </div>
@@ -220,7 +138,7 @@
     </div>
 
     <footer>
-        <p>ReadyATS | Consultoría Estratégica &copy; 2026</p>
+        <p>ReadyATS &copy; 2026 | El Talar, Tigre</p>
     </footer>
 
 </body>
